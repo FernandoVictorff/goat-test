@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: goat
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: adminadmin
+    type: com.zaxxer.hikari.HikariDataSource
+  flyway:
+    enabled: true
+    user: postgres
+    password: adminadmin
+    schemas: public
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        default_schema: public
