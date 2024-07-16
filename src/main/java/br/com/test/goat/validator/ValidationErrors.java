@@ -22,11 +22,6 @@ public class ValidationErrors implements Streamable<ValidationError> {
         return this;
     }
 
-    public ValidationErrors remove(ValidationError validationError) {
-        validationErrorList.remove(validationError);
-        return this;
-    }
-
     public ValidationError getError(int index) {
         return validationErrorList.get(index);
     }

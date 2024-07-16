@@ -1,6 +1,7 @@
 package br.com.test.goat.config;
 
 import br.com.test.goat.dto.ResponseError;
+import br.com.test.goat.exceptions.EspecializacaoNotFoundException;
 import br.com.test.goat.exceptions.InvalidRequestExcepiton;
 import br.com.test.goat.exceptions.ServidorNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -18,7 +19,7 @@ import static org.springframework.http.HttpStatus.NOT_FOUND;
 @RestControllerAdvice
 public class ControllerExceptionHandler {
 
-    @ExceptionHandler(ServidorNotFoundException.class)
+    @ExceptionHandler({ServidorNotFoundException.class, EspecializacaoNotFoundException.class})
     public ResponseEntity handleNotFoundException(Exception exception) {
         return ResponseEntity.status(NOT_FOUND.value()).body(exception.getMessage());
     }
